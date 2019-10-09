@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,9 +13,6 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call('UsersTableSeeder');
 		// create 10 users using the user factory
-        Model::unguard();
-        // Register the user seeder
-        $this->call(UsersTableSeeder::class);
-        Model::reguard();
+        factory(App\User::class, 10)->create();
     }
 }
